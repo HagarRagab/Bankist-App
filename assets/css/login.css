@@ -50,7 +50,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
   padding: 0 2rem;
+}
+
+@media (max-width: 670px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .logo {
+    order: -1;
+  }
+  .login__input {
+    flex-grow: 1;
+  }
 }
 
 .welcome {
@@ -64,7 +79,25 @@ nav {
 
 .login {
   display: flex;
+  gap: 1rem;
   position: relative;
+}
+
+@media (max-width: 670px) {
+  .login {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 10rem;
+    padding: 10px 20px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .login {
+    flex-direction: column;
+    border-radius: 10px;
+  }
 }
 
 .login__input {
@@ -75,10 +108,15 @@ nav {
   text-align: center;
   width: 12rem;
   border-radius: 10rem;
-  margin-right: 1rem;
   color: inherit;
   border: 1px solid #fff;
   transition: all 0.3s;
+}
+
+@media (max-width: 670px) {
+  .login__input {
+    width: 100%;
+  }
 }
 
 .login__input:focus {
@@ -122,6 +160,17 @@ nav {
   transition: all 1s;
 }
 
+@media (max-width: 992px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+  }
+
+  .app > div {
+    grid-column: 1 / -1;
+  }
+}
+
 /* Balance */
 .balance {
   grid-column: 1 / span 2;
@@ -129,6 +178,15 @@ nav {
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 430px) {
+  .balance {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 .balance__label {
@@ -147,6 +205,12 @@ nav {
   font-weight: 400;
 }
 
+@media (max-width: 576px) {
+  .balance__value {
+    font-size: 3rem;
+  }
+}
+
 /* MOVEMENTS */
 .movements {
   grid-row: 2 / span 3;
@@ -155,11 +219,25 @@ nav {
   overflow: auto;
 }
 
+@media (max-width: 992px) {
+  .movements {
+    max-height: 430px;
+  }
+}
+
 .movements__row {
   padding: 2.25rem 4rem;
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   align-items: center;
   border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 480px) {
+  .movements__row {
+    flex-direction: column;
+  }
 }
 
 .movements__type {
@@ -169,7 +247,6 @@ nav {
   color: #fff;
   padding: 0.1rem 1rem;
   border-radius: 10rem;
-  margin-right: 2rem;
 }
 
 .movements__date {
@@ -177,6 +254,7 @@ nav {
   text-transform: uppercase;
   font-weight: 500;
   color: #666;
+  flex-grow: 1;
 }
 
 .movements__type--deposit {
@@ -193,16 +271,22 @@ nav {
 
 .movements__value {
   font-size: 1.7rem;
-  margin-left: auto;
 }
 
 /* SUMMARY */
 .summary {
   grid-row: 5 / 6;
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
   padding: 0 0.3rem;
   margin-top: 1rem;
+}
+
+.summary > div {
+  display: flex;
+  align-items: center;
 }
 
 .summary__label {

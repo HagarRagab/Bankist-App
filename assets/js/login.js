@@ -93,7 +93,7 @@ const account2 = {
   ],
 
   currency: 'EGP',
-  locale: 'ar-EG',
+  locale: 'en-EG',
 };
 
 const account3 = {
